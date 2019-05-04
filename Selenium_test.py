@@ -6,5 +6,8 @@ driver = webdriver.Chrome(executable_path="C:/ChD/chromedriver.exe")
 driver.implicitly_wait(10)    # Set the time to waiting for elements
 driver.get("http://192.168.99.101:5000")    # Open the website
 text = driver.find_element_by_xpath("//html/body")
-print(text.text)    # Print text
+new_text = str(text.text)
+for char in "World":
+    new_text = new_text.replace(char, "")
+print(new_text)
 driver.quit()   # Close the window
